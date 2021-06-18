@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+*{
+    margin : 0px ; 
+    padding : 0px ;
+    box-sizing: border-box;
+}
+:root {
+    --light-red : hsl(356, 100%, 66%);
+    --very-light-red : hsl(355, 100%, 74%) ;
+    --very-dark-blue  : hsl(208, 49%, 24%) ;
+    --grayish-blue  :hsl(207, 13%, 34%) ;
+    --very-dark-black-blue : hsl(240, 10%, 16%);
+    --very-dark-gray-blue : hsl(237, 17%, 21%) ;
+    --very-dark-desaturated-blue :hsl(237, 23%, 32%) ;
+    --light-gray : rgb(211, 211, 211) ;
+}
+body , html {
+    overflow-x: hidden;
+    font-family: 'Overpass', sans-serif;
+    background-color: rgb(253, 247, 247) ;
+}
+
+.header {
+    position: relative;
+    height : 100vh ; 
+    width : 100% ; 
+    border-radius: 0px 0px 0px 90px ;
+    background-color: var(--light-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding : 0px 40px ;
+    overflow:hidden;
+    z-index: 2;
+}
+.header::after{
+    content: url('./images/bg-pattern-intro.svg');
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    /* opacity: 0.3; */
+    z-index: -1;
+}
+span.dis-block {
+    display: block;
+}
+.img-desk{
+    display: none;
+}
+.header h1{
+    font-size: 2.4rem;
+    line-height: 60px;
+}
+.btn{
+    padding : 15px 30px;
+    border-radius: 50px;
+    margin : 70px 3px  0px;
+    border : none ;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-white {
+    background-color: white;
+    color : var(--light-red)
+}
+.btn-transparent{
+    border : 2px solid white ;
+    background-color:transparent;
+    color: white;
+    padding : 13px 33px;
+}
+main{
+    margin-top: 100px;
+}
+section{
+    margin : 140px auto ;
+    text-align: center;
+    padding : 0px 7% ;
+}
+img {
+    width: 100%;
+}
+.head-title{
+    padding: 0px 10%;
+    text-align: center;
+}
+.mb-90{
+    margin : 0px auto 90px;
+}
+.mt-90{
+    margin : 90px auto 0px;
+}
+.paragraph{
+    margin: 20px auto;
+    color : var(--grayish-blue);
+    line-height: 30px;
+}
+
+.infor-secion{
+    position: relative;
+    background-color: var(--very-dark-black-blue);
+    color: white;
+    padding : 100px 0px;
+    margin : 70% auto 0px ;
+    border-radius: 0px 100px 0px 100px;
+    z-index: 2;
+}
+/* .infor-secion::before{
+    content: url('./images/bg-pattern-circles.svg');
+    position: absolute;
+    border : 20px solid red;
+    z-index: -1;
+} */
+.infor-secion__img{
+    margin-top : -50%;
+}
+.infor-secion .paragraph {
+    color: white;
+    padding : 0px 7% ;
+    margin : 30px auto ;
+}
+.infor-secion .head-title{
+    font-size: 2.5rem;
+    padding: 0px 20px 20px ;
+}
+.thired-section{
+    margin-top : 25vw ;
+}
+footer{
+    background-color: var(--very-dark-black-blue);
+    color: white;
+    padding : 15% 5% 0px 5% ;
+    text-align: center;
+}
+ul{
+    list-style: none;
+    margin: 0px ;
+    padding :0px ;
+}
+.footer_content{
+    display: flex ;
+    flex-direction: column;
+}
+.footer_content ul {
+    margin : 18px auto ;
+}
+.footer_content ul li:first-child {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.footer_content ul li:not(:first-child){
+    color: var(--light-gray)
+}
+
+@media all and ( min-width : 755px) {
+    .design-future-section{
+        display: flex  ;
+        flex-direction: row;
+    }
+    .design-future-section  div {
+        width: 60%;
+    }
+    .design-future-section div:last-child{
+        margin-right: -20%;
+    }
+    .infor-secion{
+        display: flex;
+        flex-direction: row;
+        padding : 0px 0px;
+        margin : 30% auto 0px ;
+        align-items: center;
+    }
+    .infor-secion__img{
+        margin-top: -10% ;
+    }
+    .img-desk{
+        display: inline;
+    }
+    .img-phone{
+        display : none;
+    }
+    .thired-section{
+        display: flex;
+        flex-direction: row;
+        flex : 40% 1fr ;
+    }
+    .thired-section > * {
+        width : 60% ;
+    }
+    .thired-section div:first-child {
+        position: relative;
+    }
+    footer {
+        padding : 30px 0px ;
+    }
+    footer div:not(:last-child){
+        display: flex;
+        flex-direction: row;
+        line-height: 50px;
+
+    }
+    footer div:first-child h1{
+        display: inline;
+    }
+    .footer_content{
+        display: flex;
+        flex-direction: row;
+
+    }
+}
