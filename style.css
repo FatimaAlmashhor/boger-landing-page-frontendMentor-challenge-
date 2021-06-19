@@ -50,7 +50,7 @@ nav{
     left: 0px;
     width: 100%;
     max-height: 80px;
-    padding: 20px;
+    padding: 20px 5%;
     /* background-color: khaki; */
     display: flex;
     flex-direction : row ;
@@ -99,7 +99,7 @@ nav{
 .navigaton-phone div:nth-child(3){
     margin-bottom: 50px;
 }
-.navigaton-phone div label{
+.navigaton-phone div label  {
     position: absolute;
     left:0px;
     /* background-color: red; */
@@ -249,6 +249,7 @@ img {
 } */
 .infor-secion__img{
     margin-top : -50%;
+    width: 50%;
 }
 .infor-secion .paragraph {
     color: white;
@@ -260,7 +261,11 @@ img {
     padding: 0px 20px 20px ;
 }
 .thired-section{
-    margin-top : 25vw ;
+    margin-top : 10vw ;
+}
+.thired-section div:first-child img{
+    width: 130%;
+    margin-left: -40%;
 }
 footer{
     background-color: var(--very-dark-black-blue);
@@ -302,7 +307,7 @@ ul{
     .infor-secion{
         display: flex;
         flex-direction: row;
-        padding : 0px 0px;
+        padding : 50px 10px;
         margin : 10% auto 0px ;
         align-items: center;
     }
@@ -327,21 +332,22 @@ ul{
         position: relative;
     }
     footer {
-        padding : 30px 0px ;
+        padding : 0px 5% ;
     }
     footer div:not(:last-child){
         display: flex;
         flex-direction: row;
-        line-height: 50px;
+        line-height: 33px;
 
     }
     footer div:first-child h1{
         display: inline;
+        margin-top : 20px;
     }
     .footer_content{
         display: flex;
         flex-direction: row;
-
+        margin: 0px 10% ;
     }
     .navigaton-phone{
         display: none;
@@ -360,8 +366,28 @@ ul{
         color : white;
         width : 100%;
     }
+     .navigaton-desk div label{
+         position: relative;
+        cursor: pointer;
+        transform: all 0.5s ease-in;
+        padding-bottom: 7px;
+    }
+    .navigaton-desk div label::before{
+        content: '';
+        bottom: 0px;
+        position: absolute ; 
+        width : 0% ;
+        height : 1.3px;
+        background-color : white;
+        transition: width 0.5s ease 0.1s;
+    }
+    .navigaton-desk div label:hover::before{
+        /* border-bottom: 1px solid white;
+        padding-bottom: 8px; */
+        width : 100%;
+    }
     .navigaton-desk div:not(:last-child) {
-        margin : auto 12px; 
+        margin : auto 25px; 
     }
     .navigation-footer{
         flex-direction: row;
@@ -390,5 +416,33 @@ ul{
     .navigation-footer button:last-child:hover{
         background: rgba(255,255,255,0.2);
         color : white
+    }
+    #toggle-inner-list-product-desk ,
+    #toggle-inner-list-comp-desk,
+    #toggle-inner-list-connect-desk{
+        display: none;
+    }
+    #toggle-inner-list-product-desk:checked ~ .inner-list ,
+    #toggle-inner-list-comp-desk:checked  ~ .inner-list ,
+    #toggle-inner-list-connect-desk:checked  ~ .inner-list 
+    {
+        display: block;
+    }
+    .inner-list{
+        position: absolute;
+        width: 150px;
+        padding: 10px;
+        background-color: white;
+        color : var(--grayish-blue);
+        border-radius: 5px;
+        margin-top: 20px;
+        box-shadow: 1px 6px 10px 2px #80808061
+    }
+    .inner-list li{
+        line-height: 20px;
+    }
+    .inner-list li:hover ,  .inner-list li:hover a{
+        background-color: transparent;
+        color : var(--light-gray)
     }
 }
