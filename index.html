@@ -16,7 +16,91 @@
 </head>
 <body>
   <header class="header">
-    <nav></nav>
+    <nav>
+      <a href="#" class="logo">Blogr</a>
+      <div class="toggle">
+        <!-- <input type='checkbox' id='toggle-check' /> -->
+        <img alt='toggle' class="hamb" src='./images/icon-hamburger.svg'/>
+        <img alt='toggle' class="close" src='./images/icon-close.svg'/>
+      </div>
+      <div class="navigaton-phone">
+         <div>
+            <input type="checkbox" id='toggle-inner-list-product' name='expand'/>
+            <label for='toggle-inner-list-product'>Product</label>
+            <ul class="inner-list">
+                <li><a href='#' >Overview</a></li>
+                <li><a href='#' >Pricing</a></li>
+                <li><a href='#' >Marketplace</a></li>
+                <li><a href='#' >Features</a></li>
+                <li><a href='#' >Integrations</a></li>
+              </ul>
+          </div>
+          <div>
+            <input type="checkbox" id='toggle-inner-list-comp' name='expand'/>
+            <label for='toggle-inner-list-comp'>Company</label>
+            <ul class="inner-list">
+                <li>About</li>
+                <li>Team</li>
+                <li>Blog</li>
+                <li>Careers</li>
+            </ul>
+          </div>
+          <div>
+            <input type="checkbox" id='toggle-inner-list-connect' name='expand'/>
+            <label for='toggle-inner-list-connect'>Connect</label>
+            <ul class="inner-list">
+                <li>Contact</li>
+                <li>Newsletter</li>
+                <li>LinkedIn</li>
+            </ul>
+          </div>
+        
+
+        <div class="navigation-footer">
+          <button>Login </button>
+          <button>Sign Up </button>
+        </div>
+        
+      </div>
+      <div class="navigaton-desk">
+          <div>
+            <input type="checkbox" id='toggle-inner-list-product' name='expand'/>
+            <label for='toggle-inner-list-product'>Product</label>
+            <ul class="inner-list">
+                <li><a href='#' >Overview</a></li>
+                <li><a href='#' >Pricing</a></li>
+                <li><a href='#' >Marketplace</a></li>
+                <li><a href='#' >Features</a></li>
+                <li><a href='#' >Integrations</a></li>
+              </ul>
+          </div>
+          <div>
+            <input type="checkbox" id='toggle-inner-list-comp' name='expand'/>
+            <label for='toggle-inner-list-comp'>Company</label>
+            <ul class="inner-list">
+                <li>About</li>
+                <li>Team</li>
+                <li>Blog</li>
+                <li>Careers</li>
+            </ul>
+          </div>
+          <div>
+            <input type="checkbox" id='toggle-inner-list-connect' name='expand'/>
+            <label for='toggle-inner-list-connect'>Connect</label>
+            <ul class="inner-list">
+                <li>Contact</li>
+                <li>Newsletter</li>
+                <li>LinkedIn</li>
+            </ul>
+          </div>
+        
+
+        <div class="navigation-footer">
+          <button>Login </button>
+          <button>Sign Up </button>
+        </div>
+      </div>
+    </nav>
     <div class="header_content">
       <h1> <span class="dis-block"> A modern <span>publishing platform</h1>
       <p>  <span class="dis-block"></span>Grow your audience and build </span>your online brand </p>
@@ -153,92 +237,37 @@
       </div>
     </footer>
   </main>
-  <!-- Product
+  <!--
+    
 
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
+  -->
 
-  Company
-
-  About
-  Team
-  Blog
-  Careers
-
-  Connect
-
-  Contact
-  Newsletter
-  LinkedIn
-  
-  Login
-  Sign Up -->
-
- 
-
-
-
-
-
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
   
 
     <script>
-      //don't cahnge the function name
-
-const birthdayCake = (arr) => {
-  //your code goes here 
-  let tallest = arr[0];
-  for(let i = 1 ; i < arr.length -1 ; i ++){
-      if(tallest <= arr[i])
-      {
-        tallest = arr[i] ;
+      const toggle = document.querySelector('.toggle');
+      const close = document.querySelector('.close');
+      const humb = document.querySelector('.hamb');
+      const nav = document.querySelector('.navigaton-phone');
+      let isToggle = false ;
+      
+      toggle.addEventListener('click' , (e)=>{
         
-      }
-  }
-  // console.log(tallest)
+        if(isToggle){
+          close.style.display = 'none' ; 
+          humb.style.display = 'inline' ;
+          nav.style.display = 'none';
 
-let numbers = 0 ;
-  for(let i = 0 ; i < arr.length -1 ; i ++){
-      if(tallest == arr[i])
-      {
-        numbers += 1 ;
-      }
-  }
-  // console.log(numbers)
-  // return numbers ;
-  let max = Math.max.apply(0 , arr);
-  let result = arr.filter(element=>{
-   if(element == max)
-      return element ;
-  } , [0]);
-  console.log(result.length);
-  return result.length
-  
-}
+        }
+        else {
+          close.style.display = 'inline' ; 
+          humb.style.display = 'none' ;
+          nav.style.display = 'block';
 
-birthdayCake([4,4,1,3]);
+        }
+        isToggle = !isToggle ;
+      })
+
     </script>
 </body>
 </html>
