@@ -366,6 +366,10 @@ ul{
         color : white;
         width : 100%;
     }
+    .navigaton-desk div  {
+        display: flex;
+        flex-direction: row;
+    }
      .navigaton-desk div label{
          position: relative;
         cursor: pointer;
@@ -417,6 +421,12 @@ ul{
         background: rgba(255,255,255,0.2);
         color : white
     }
+    .arrow-down{
+        width : 13px;
+        height: 13px;
+        margin : 2px 5px;
+        transition: transform 0.4s ease;
+    }
     #toggle-inner-list-product-desk ,
     #toggle-inner-list-comp-desk,
     #toggle-inner-list-connect-desk{
@@ -427,6 +437,11 @@ ul{
     #toggle-inner-list-connect-desk:checked  ~ .inner-list 
     {
         display: block;
+    }
+    #toggle-inner-list-product-desk:checked ~ .arrow-down,
+    #toggle-inner-list-comp-desk:checked  ~ .arrow-down ,
+    #toggle-inner-list-connect-desk:checked ~ .arrow-down{
+        transform: rotate(180deg);
     }
     .inner-list{
         position: absolute;
@@ -445,4 +460,5 @@ ul{
         background-color: transparent;
         color : var(--light-gray)
     }
+    
 }
